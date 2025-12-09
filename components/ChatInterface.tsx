@@ -27,6 +27,7 @@ const ChatInterface: React.FC = () => {
   };
 
   const processedPersona = replacePlaceholders(config.aiPersona);
+  // PERBAIKAN: Tambahkan backticks untuk template string
   const systemInstruction = User: ${currentUser?.username || 'Guest'}. ${processedPersona};
 
   const [messages, setMessages] = useState<Message[]>([]);
@@ -58,7 +59,7 @@ const ChatInterface: React.FC = () => {
         }
     };
     loadHistory();
-  }, [currentUser]); // Dependency on currentUser ensures it runs when user data is ready
+  }, [currentUser]);
 
   // Scroll to bottom
   useEffect(() => {
