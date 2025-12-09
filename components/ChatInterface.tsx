@@ -61,7 +61,7 @@ const ChatInterface: React.FC = () => {
                 }));
                 setMessages(formattedMessages);
             } else {
-                setMessages([{ role: 'model', text: Connection established. ${config.aiName} System online. Hello, ${currentUser?.username}. }]);
+                setMessages([{ role: 'model', text: Connection established. ${config.aiName} System online. Hello, ${currentUser?.username || 'Guest'}. }]);
             }
         }
     };
